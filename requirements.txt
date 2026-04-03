@@ -1,0 +1,9 @@
+# Blender Draco Compression CLI
+# No external Python dependencies required!
+#
+# This tool uses Blender's built-in Python environment and libraries.
+# The only requirement is having Blender installed.
+#
+# Blender Download: https://www.blender.org/download/
+#
+# Supported Blender versions: 2.93+
