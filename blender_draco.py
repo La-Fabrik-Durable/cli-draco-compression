@@ -156,8 +156,8 @@ Environment:
     parser.add_argument(
         '--format', '-f',
         choices=['glb', 'gltf'],
-        default='gltf',
-        help='Output format (default: gltf)'
+        default='glb',
+        help='Output format (default: glb)'
     )
 
     parser.add_argument(

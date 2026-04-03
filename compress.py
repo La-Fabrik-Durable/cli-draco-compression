@@ -148,7 +148,7 @@ def export_mesh(filepath, draco_level=7, format_type='glb'):
     return stdout_buffer.getvalue()
 
 
-def get_default_output(input_path, format_type='gltf'):
+def get_default_output(input_path, format_type='glb'):
     input_file = Path(input_path)
     suffix = get_output_extension(format_type)
     return str(input_file.parent / f"{input_file.stem}_compressed{suffix}")
@@ -370,8 +370,8 @@ Examples:
     parser.add_argument(
         '--format', '-f',
         choices=SUPPORTED_OUTPUT_FORMATS,
-        default='gltf',
-        help='Output format (default: gltf)'
+        default='glb',
+        help='Output format (default: glb)'
     )
 
     parser.add_argument(

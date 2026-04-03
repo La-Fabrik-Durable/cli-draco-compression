@@ -64,7 +64,7 @@ blender --background --python compress.py -- model.glb
 **Resultat:** `model_compressed.glb`
 - Draco compression: niveau 7
 - Resize textures: active (512px max)
-- Format: GLTF
+- Format: GLB (1 seul fichier avec tout embarqué)
 
 ---
 
@@ -80,7 +80,7 @@ blender --background --python compress.py -- model.glb
 | `--texture-size` | | `512` | Taille max textures (pixels) |
 | `--batch` | `-b` | | Mode batch (repertoire) |
 | `--output-dir` | `-d` | | Repertoire de sortie (batch) |
-| `--format` | `-f` | `gltf` | Format: `glb` ou `gltf` |
+| `--format` | `-f` | `glb` | Format: `glb` (1 fichier) ou `gltf` (fichiers separes) |
 | `-q` | `--quiet` | | Mode silencieux |
 | `-h` | `--help` | | Aide |
 
@@ -91,7 +91,7 @@ blender --background --python compress.py -- model.glb
 ### Compression simple
 ```bash
 blender_draco.bat model.glb
-# Output: model_compressed.glb
+# Output: model_compressed.glb (1 seul fichier)
 ```
 
 ### Avec options personnalisees
@@ -105,7 +105,7 @@ blender_draco.bat model.glb --no-resize
 # Taille de textures personnalisee
 python blender_draco.py model.glb --texture-size 2048
 
-# Format gltf au lieu de glb
+# Format gltf (fichiers separes)
 blender_draco.bat model.glb --format gltf
 ```
 
@@ -151,8 +151,8 @@ python blender_draco.py --batch ./models/ --output-dir ./compressed/ --draco-lev
 
 | Format | Extension | Description |
 |--------|----------|-------------|
-| **GLTF** | `.gltf` | JSON + fichiers separes (recommande) |
-| GLB | `.glb` | Binary (1 fichier) |
+| **GLB** | `.glb` | 1 seul fichier (recommande) |
+| GLTF | `.gltf` + `.bin` + textures | Fichiers separes |
 
 ---
 
